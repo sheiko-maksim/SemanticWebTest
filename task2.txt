@@ -1,0 +1,14 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?title
+FROM <http://dbpedia.org/>
+WHERE {
+  ?title dbo:country dbr:Ukraine .
+  ?title rdf:type dbo:University .
+  ?title dbo:foundingDate ?year
+}
+ORDER BY (?year)
+LIMIT 1
